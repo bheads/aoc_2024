@@ -1,0 +1,9 @@
+[package]
+name = "day3"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+assert2 = "0.3.15"
+atoi = "2.0.0"
+regex = "1.11.1"
