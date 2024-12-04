@@ -4,8 +4,7 @@ use atoi::atoi;
 use regex::Regex;
 
 const SAMPLE: &str = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))";
-const SAMPLE2: &str =
-    "do()xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))";
+const SAMPLE2: &str = "do()xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))";
 
 fn main() {
     let source = fs::read_to_string("day3/source.txt").expect("Cant read the file");
@@ -27,9 +26,7 @@ fn extract(haystack: &str) -> i64 {
 }
 
 fn extract2(haystack: &str) -> i64 {
-    let re =
-        Regex::new(r"mul\((?<lhs>\d{1,3})\,(?<rhs>\d{1,3})\)|(?<off>don\'t\(\))|(?<on>do\(\))")
-            .unwrap();
+    let re = Regex::new(r"mul\((?<lhs>\d{1,3})\,(?<rhs>\d{1,3})\)|(?<off>don\'t\(\))|(?<on>do\(\))").unwrap();
     let mut okay = true;
     re.captures_iter(haystack)
         .map(|caps| {
