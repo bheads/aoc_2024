@@ -1,0 +1,9 @@
+[package]
+name = "day5"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+assert2 = "0.3.15"
+atoi = "2.0.0"
+multimap = "0.10.0"
